@@ -9,7 +9,6 @@ const currentRouter = express.Router();
 const hourlyRouter = express.Router(); 
 
 currentRouter.get("/:city", async (req, res) => {
-  console.log("currently info");
   const { city } = req.params;
 
   try {
@@ -29,7 +28,6 @@ currentRouter.get("/:city", async (req, res) => {
 });
 
 hourlyRouter.get("/:city", async (req, res) => {
-  console.log("hourly info");
   const { city } = req.params;
 
   try {
