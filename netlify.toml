@@ -1,0 +1,14 @@
+[build]
+  functions = "netlify/functions"
+  command = "npm install"
+[functions]
+  external_node_modules = ["express"]
+  node_bundler = "esbuild"
+[[redirects]]
+  from = "/current/:city"
+  to = "/.netlify/functions/weather/current/:city"
+  status = 200
+[[redirects]]
+  from = "/hourly/:city"
+  to = "/.netlify/functions/weather/hourly/:city"
+  status = 200
