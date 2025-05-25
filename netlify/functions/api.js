@@ -18,13 +18,13 @@ currentRouter.get("/:city", async (req, res) => {
     );
     if (response.ok) {
       const data = await response.json();
-      res.json(data);
+      res.status(200).json(data);
     } else {
       throw new Error("City current weather not found.");
     }
   } catch (err) {
     console.error(err);
-    res.send(err);
+    res.status(400).json(err);
   }
 });
 
@@ -38,13 +38,13 @@ hourlyRouter.get("/:city", async (req, res) => {
     );
     if (response.ok) {
       const data = await response.json();
-      res.json(data);
+      res.status(200).json(data);
     } else {
       throw new Error("City houly weather not found.");
     }
   } catch (err) {
     console.error(err);
-    res.send(err);
+    res.status(400).json(err);
   }
 });
 
